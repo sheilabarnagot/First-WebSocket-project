@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SocketIO</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+  </head>
+  <body>
+    <h1>Chat</h1>
+    <div id="userContainer"></div>
+    <div id="user">
+      <form id="formUser">
+        <input type="text" id="inputUser" name="submitButton" /><button>
+          Write your name here
+        </button>
+      </form>
+    </div>
+    <div id="message">
+      <form id="form">
+        <input type="text" id="input" /><button>Send a message</button>
+      </form>
+      <h2>Your chats</h2>
+      <ul id="messages"></ul>
+    </div>
+    <p id="clock"></p>
+
+    <h2>Start the game!</h2>
+
+    <div id="rollForm">
+      <button id="rollButton">Throw the dice</button>
+    </div>
+    <ul id="rollHistory"></ul>
+
+    <div id="results"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+  </body>
+</html>
