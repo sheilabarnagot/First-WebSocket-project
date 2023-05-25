@@ -5,33 +5,37 @@
     <link rel="stylesheet" type="text/css" href="css/index.css" />
   </head>
   <body>
-    <h1>Chat</h1>
-    <div id="userContainer"></div>
-    <div id="user">
-      <form id="formUser">
-        <input type="text" id="inputUser" name="submitButton" /><button>
-          Write your name here
-        </button>
-      </form>
+    <h1 id="title">Chat and play with your friend</h1>
+    <div id="chatAndGame">
+      <div id="userChatContainer">
+        <div id="userContainer"></div>
+        <div id="user">
+          <form id="formUser">
+            <input type="text" id="inputUser" name="submitButton" /><button id="sendName">
+              Write your name here
+            </button>
+          </form>
+        </div>
+        <div id="message">
+          <form id="form">
+            <input type="text" id="input" /><button id="sendMessage">Send a message</button>
+          </form>
+          <h2 id="chatsMessages">Your chats</h2>
+          <ul id="messages"></ul>
+        </div>
+        <p id="clock"></p>
+      </div>
+      <div id="throwDiceContainer">
+        <h2 id="throwDice">Throw the dice to start the game!</h2>
+
+        <div id="rollForm">
+          <button id="rollButton">Throw the dice</button>
+        </div>
+        <ul id="rollHistory"></ul>
+
+        <div id="results"></div>
+      </div>
     </div>
-    <div id="message">
-      <form id="form">
-        <input type="text" id="input" /><button>Send a message</button>
-      </form>
-      <h2>Your chats</h2>
-      <ul id="messages"></ul>
-    </div>
-    <p id="clock"></p>
-
-    <h2>Start the game!</h2>
-
-    <div id="rollForm">
-      <button id="rollButton">Throw the dice</button>
-    </div>
-    <ul id="rollHistory"></ul>
-
-    <div id="results"></div>
-
     <script src="/socket.io/socket.io.js"></script>
     <script src="client.js"></script>
   </body>
