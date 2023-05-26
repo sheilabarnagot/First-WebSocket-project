@@ -1,3 +1,4 @@
+// This code sets up a server-side application using Express and Socket.IO.
 const express = require("express");
 const app = express();
 const http = require("http");
@@ -80,3 +81,7 @@ setInterval(() => {
     today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
   io.emit("time", time);
 }, 1000);
+
+// This server-side code sets up an Express server with Socket.IO integration.
+// It handles various events emitted by the clients, interacts with the database
+// to store and retrieve data, and provides endpoints for retrieving and deleting user data.

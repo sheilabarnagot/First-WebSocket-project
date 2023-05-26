@@ -19,7 +19,6 @@ const chatioSchema = new mongoose.Schema(
     ],
     total: {
       type: Number,
-      // required: true,
       default: 0,
     },
   },
@@ -29,4 +28,4 @@ const chatioSchema = new mongoose.Schema(
 const Chatio = mongoose.model("Chatio", chatioSchema);
 module.exports = { Chatio };
 
-// We use [] in message and games to be able to save the messages as an object
+// Mongoose schema and model for a document in the MongoDB database.

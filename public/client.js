@@ -1,3 +1,6 @@
+// This code sets up a basic client-side application that uses
+// the Socket.IO library to establish a real-time, bidirectional
+// communication channel between the client (browser) and the server.
 const socket = io();
 
 const formUser = document.querySelector("#formUser");
@@ -19,7 +22,7 @@ formUser.addEventListener("submit", function (e) {
   userContainer.innerHTML = "<h2>Welcome " + myUser + "!</h2>";
   document.getElementById("user").style.display = "none";
   document.getElementById("message").style.display = "block";
-  socket.emit("user", {myUser})
+  socket.emit("user", { myUser });
 });
 
 form.addEventListener("submit", function (e) {
@@ -37,10 +40,8 @@ diceButton.addEventListener("click", () => {
   socket.emit("rollDice", { user: myUser, dice: dice, total: myTotal });
 });
 
-// Actualizar el total y mostrar los resultados del dado
 socket.on("diceRolled", (msg) => {
   let item = document.createElement("li");
-  // item.textContent = msg;
   item.textContent = msg.user + ": " + msg.dice + " Total: " + msg.total;
   rollHistory.appendChild(item);
 });
@@ -48,7 +49,6 @@ socket.on("diceRolled", (msg) => {
 socket.on("newChatMessage", function (msg) {
   console.log("Chat" + msg.user + " " + msg.message);
   let item = document.createElement("li");
-  // item.textContent = msg;
   item.textContent = msg.user + ": " + msg.message;
   messages.appendChild(item);
 });
@@ -56,3 +56,8 @@ socket.on("newChatMessage", function (msg) {
 socket.on("time", (timeMsg) => {
   clock.innerHTML = timeMsg;
 });
+
+// This code establishes a connection to a server using Socket.IO and handles
+// various events related to user input, chat messages, dice rolling, and time
+// updates. It updates the UI by appending new messages and roll history items
+// to their respective containers.
